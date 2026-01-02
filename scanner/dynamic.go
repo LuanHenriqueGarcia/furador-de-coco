@@ -12,12 +12,13 @@ func GetRenderedHTML(url string) (string, error) {
 	defer cancel()
 
 	var html string
-	timeoutCtx, cancel := context.WithTimeout(ctx, 15*time.Second)
+
+	timeoutCtx, cancel := context.WithTimeout(ctx, 7*time.Second)
 	defer cancel()
 
 	err := chromedp.Run(timeoutCtx,
 		chromedp.Navigate(url),
-		chromedp.Sleep(2*time.Second),
+		chromedp.Sleep(1*time.Second), 
 		chromedp.OuterHTML("html", &html),
 	)
 

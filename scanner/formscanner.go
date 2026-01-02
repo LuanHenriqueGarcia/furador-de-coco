@@ -41,6 +41,9 @@ func parseHTML(input interface{}) ([]Form, error) {
 	var forms []Form
 	var f func(*html.Node)
 	f = func(n *html.Node) {
+		if n == nil {
+			return
+		}
 		if n.Type == html.ElementNode && n.Data == "form" {
 			form := Form{Method: "GET"}
 			for _, attr := range n.Attr {
