@@ -92,11 +92,11 @@ func main() {
 
 func printBanner() {
 	banner := `
-╔═══════════════════════════════════════════╗
-║     🥥 FURADOR DE COCO 🥥                ║
-║     Security Vulnerability Scanner        ║
-║     v2.0 - Enhanced Edition              ║
-╚═══════════════════════════════════════════╝
++===========================================+
+|     FURADOR DE COCO                      |
+|     Security Vulnerability Scanner        |
+|     v2.0 - Enhanced Edition              |
++===========================================+
 `
 	fmt.Println(banner)
 }

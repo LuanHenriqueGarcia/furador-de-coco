@@ -188,15 +188,15 @@ func CheckSecurityHeaders(url string, client *http.Client) []SecurityHeader {
 
 // PrintSecurityHeaders imprime os headers de segurança de forma formatada
 func PrintSecurityHeaders(headers []SecurityHeader) {
-	fmt.Println("\n🔒 Verificação de Headers de Segurança:")
+	fmt.Println("\n[+] Verificação de Headers de Segurança:")
 	fmt.Println(strings.Repeat("-", 70))
 
 	for _, h := range headers {
-		icon := "✓"
+		icon := "[OK]"
 		if !h.Present && h.Severity != "low" {
-			icon = "✗"
+			icon = "[X]"
 		} else if !h.Present {
-			icon = "⚠"
+			icon = "[!]"
 		}
 
 		fmt.Printf("%s [%s] %s\n", icon, strings.ToUpper(h.Severity), h.Name)

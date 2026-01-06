@@ -52,7 +52,7 @@ func (pb *ProgressBar) render() {
 	filled := int(percent * float64(pb.width))
 	empty := pb.width - filled
 
-	bar := strings.Repeat("█", filled) + strings.Repeat("░", empty)
+	bar := strings.Repeat("#", filled) + strings.Repeat("-", empty)
 
 	elapsed := time.Since(pb.start)
 	var eta time.Duration
@@ -96,7 +96,7 @@ type Spinner struct {
 // NewSpinner cria um novo spinner
 func NewSpinner(text string) *Spinner {
 	return &Spinner{
-		frames: []string{"⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"},
+		frames: []string{"|", "/", "-", "\\"},
 		text:   text,
 	}
 }

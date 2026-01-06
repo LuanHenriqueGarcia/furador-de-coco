@@ -124,7 +124,7 @@ func SaveHTML(results []ScanResult, filename string) error {
 <body>
     <div class="container">
         <div class="header">
-            <h1>🥥 Relatório de Vulnerabilidades - Furador de Coco</h1>
+            <h1>Relatório de Vulnerabilidades - Furador de Coco</h1>
             <div class="timestamp">Gerado em: ` + time.Now().Format("02/01/2006 às 15:04:05") + `</div>
         </div>
         <div class="content">`)
